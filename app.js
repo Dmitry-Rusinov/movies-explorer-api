@@ -2,13 +2,14 @@ import express, {json} from 'express';
 import mongoose from 'mongoose';
 import 'dotenv/config';
 import cors from 'cors';
+import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import { errors } from 'celebrate';
 import { requestLogger, errorLogger } from './middlewares/Logger.js';
 import router from './routes/index.js';
 import errorHandler from './middlewares/errorHandler.js';
 
-const { PORT = 3001, MONGO_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
+const { PORT = 3000, MONGO_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 
 const app = express();
 app.use(cors({
@@ -22,7 +23,7 @@ app.use(cors({
 mongoose.connect(MONGO_URL);
 
 app.use(json());
-
+app.use(helmet());
 app.use(cookieParser());
 
 app.use(requestLogger);

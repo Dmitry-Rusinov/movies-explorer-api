@@ -8,7 +8,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 const getInfoByCurrentUser = (req, res, next) => {
   User.findById(req.user._id)
-    .then((user) => res.status(200).send({name: user.name, email: user.email, _id: user._id}))
+    .then((user) => res.status(200).send({ name: user.name, email: user.email }))
     .catch(next);
 };
 
@@ -34,7 +34,7 @@ const createUser = (req, res, next) => {
     .then((hash) => User.create({
       email,
       password: hash,
-      name/* : req.body.name */,
+      name,
     }))
     .then((user) => {
       res.status(201).send({
