@@ -19,6 +19,9 @@ const updateUserProfile = (req, res, next) => {
       res.status(200).send({name: user.name, email: user.email});
     })
     .catch((err) => {
+      if (err.code === 11000) {
+        return next(new Conflict('Такой эмейл уже занят'));
+      }
       if (err.name === 'ValidationError') {
         return next(new BadRequest('Ошибка валидации полей'));
       }
