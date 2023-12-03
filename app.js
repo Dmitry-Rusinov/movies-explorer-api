@@ -29,7 +29,9 @@ app.use(cookieParser());
 app.use(requestLogger);
 
 app.use('/', router);
-
+/* app.use(((req, res, next) => {
+  console.log(req.body);
+  return next()})); */
 app.use(errorLogger);
 
 app.use(errors());

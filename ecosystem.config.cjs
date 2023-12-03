@@ -14,7 +14,7 @@ module.exports = {
       repo: 'git@github.com:Dmitry-Rusinov/movies-explorer-api.git',
       path: '/home/movie-service/auto-deploy',
       'pre-deploy-local': 'scp .env movie-service@51.250.8.134:/home/movie-service/auto-deploy/current/backend',
-      'post-deploy': 'pwd && backend && npm i && pm2 startOrRestart ecosystem.config.cjs --env production',
+      'post-deploy': 'pwd && backend && npm i && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 };
