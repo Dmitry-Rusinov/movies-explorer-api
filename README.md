@@ -1,9 +1,26 @@
-# movies-explorer-api
+# Фронтенд дипломной работы курса Веб-разработчик Яндекс.Практикума
 
-## Бэкенд дипломной работы курса Web-developer Яндекс.Практикума 
+## MOVIES EXPLORER API
 
-### Публичный IP: 51.250.8.134
+Многостраничное приложение, в котором можно найти фильмы по запросу и сохранить в личном кабинете.
+Приложение состоит из фронтенд и бэкенд частей.
+Ссылка на фронтенд https://github.com/Dmitry-Rusinov/movies-explorer-frontend
 
-### Backend: https://api.movie-service.nomoredomainsmonster.ru
+## Ссылка на пул реквест: https://github.com/Dmitry-Rusinov/movies-explorer-api/pull/1
 
-### Адрес репозитория: https://github.com/Dmitry-Rusinov/movies-explorer-api
+## Ссылка на проект: 
+https://api.movie-service.nomoredomainsmonster.ru (Истек срок размещения)
+
+## Функциональность
+* Регистрация и авторизация пользователей
+* Валидация запросов до передачи контроллеру
+* Часть роутов защищена авторизацией
+* Хранение переменных окружения на сервере
+* Хранение констант в отдельном файле
+* Хранение токена в куки
+
+## Стек технологий
+MongoDB, Express.js, Node.js, Git, pm2, NGINX
+
+## Статус проекта
+*Завершен*
